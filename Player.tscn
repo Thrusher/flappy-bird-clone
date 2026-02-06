@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dudixxthtghxy"]
+
+[ext_resource type="Script" uid="uid://3k2iw64vl4h8" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://b2g31kqvfct5q" path="res://icon.svg" id="1_xhfnw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xhfnw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhfnw"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1502191318]
+slide_on_ceiling = false
+script = ExtResource("1_kpjcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=994675596]
+sprite_frames = SubResource("SpriteFrames_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855201417]
+shape = SubResource("CircleShape2D_xhfnw")
